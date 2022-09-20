@@ -1,10 +1,26 @@
 class Lasagna
 {
-    // TODO: define the 'ExpectedMinutesInOven()' method
+    private const int TimeInOven = 40;
+    private const int TimePerLayer = 2;
 
-    // TODO: define the 'RemainingMinutesInOven()' method
+    public int ExpectedMinutesInOven()
+    {
+        return TimeInOven;
+    }
 
-    // TODO: define the 'PreparationTimeInMinutes()' method
+    public int RemainingMinutesInOven(int cookingTime)
+    {
+        return TimeInOven - cookingTime;
+    }
 
-    // TODO: define the 'ElapsedTimeInMinutes()' method
+    public int PreparationTimeInMinutes(int layerCount)
+    {
+        return layerCount * TimePerLayer;
+    }
+
+    public int ElapsedTimeInMinutes(int layerCount, int cookingTime)
+    {
+        var preparationTime = this.PreparationTimeInMinutes(layerCount);
+        return preparationTime + cookingTime;
+    }
 }
